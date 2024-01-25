@@ -7,27 +7,40 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid x:Name="myGrid">
-        <Canvas x:Name="myCanvas" HorizontalAlignment="Left" Height="228" Margin="176,57,0,0" VerticalAlignment="Top" Width="302"/>
+        
+        <Grid x:Name="myGrid2" Margin="0,0,0,-4">
+            <Button x:Name="btn1" Content="Random Hair"
+                    Click="randomize" ClickMode="Hover"
+                    Margin="32,305,0,10" Width="88"
+                    HorizontalAlignment="Left"
+                    Foreground="Green"
+            />
+            <Button x:Name="btn2" Content="Random Eyes"
+                    Click="randomize" ClickMode="Hover"
+                    Margin="125,305,0,10" Width="88"
+                    HorizontalAlignment="Left"
+                    Foreground="Green"
+            />
+            <Button x:Name="btn3" Content="Random Nose"
+                    Click="randomize" ClickMode="Hover"
+                    Margin="0,305,0,10" Width="88"
+                    HorizontalAlignment="Center"
+                    Foreground="Green"
+            />
+            <Button x:Name="btn4" Content="Random Mouth"
+                    Click="randomize" ClickMode="Hover"
+                    Margin="312,305,0,10" Width="88"
+                    HorizontalAlignment="Left"
+                    Foreground="Green"
+            />
+            <Button x:Name="btn5" Content="Random Face"
+                    Click="randomize" ClickMode="Hover"
+                    Margin="405,305,0,10" Width="88"
+                    HorizontalAlignment="Left"
+                    Foreground="Green"
+            />
+        </Grid>
 
-        <Border BorderBrush="Gray" BorderThickness="4" Margin="11,22,361,10" RenderTransformOrigin="0.5,0.5">
-            <Grid x:Name="myGrid2" Margin="0,0,0,-4">
-                <Button x:Name="button" Content="Button" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-                <CheckBox x:Name="checkBox" Content="CheckBox" HorizontalAlignment="Left" Margin="13,46,0,0" VerticalAlignment="Top" Width="100" Checked="checkBox_Checked"/>
-                <Button x:Name="Add_Face" Content="Add Face" HorizontalAlignment="Center" Margin="0,84,0,0" VerticalAlignment="Top" Width="75" Click="Add_Face_Click"/>
-                <Button x:Name="buttonTest" Content="Button" HorizontalAlignment="Left" Margin="426,21,0,0" VerticalAlignment="Top" Width="75" Click="buttonTest_Click"/>
-                <Label Content="Pick one" HorizontalAlignment="Left" Margin="36,123,0,0" VerticalAlignment="Top"/>
-                <ComboBox x:Name="comboTest" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top" Width="120" 
-                  SelectedIndex="2"
-                  SelectionChanged="comboTest_SelectionChanged">
-                    <ComboBoxItem Content="Alice"/>
-                    <ComboBoxItem Content="Bob"/>
-                    <ComboBoxItem Content="Charlie"/>
-                    <ComboBoxItem Content="ComboBoxItem"/>
-                </ComboBox>
-                <Label Content="Slide one" HorizontalAlignment="Left" Margin="41,194,0,0" VerticalAlignment="Top"/>
-                <Slider x:Name="sliderTest" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top" Width="120" ValueChanged="sliderTest_ValueChanged" SelectionEnd="100" SelectionStart="1" IsSelectionRangeEnabled="True" TickPlacement="BottomRight" Value="5" Minimum="-4"/>
-            </Grid>
 
-        </Border>
     </Grid>
 </Window>
