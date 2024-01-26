@@ -6,41 +6,48 @@
         xmlns:local="clr-namespace:M01_First_WPF_Proj"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid x:Name="myGrid">
-        
-        <Grid x:Name="myGrid2" Margin="0,0,0,-4">
-            <Button x:Name="btn1" Content="Random Hair"
+	<Grid x:Name="myGrid">
+		
+		<Canvas x:Name="faceCanvas" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="500" Margin="10,10,0,0">
+			
+			<Image x:Name="hairImage" />
+			<Image x:Name="eyesImage" />
+			<Image x:Name="noseImage" />
+			<Image x:Name="mouthImage" />
+		</Canvas>
+
+		<Grid x:Name="myGrid2" Margin="0,0,0,-4">
+			<Button x:Name="btn1" Content="Random Hair"
                     Click="randomize" ClickMode="Hover"
                     Margin="32,305,0,10" Width="88"
                     HorizontalAlignment="Left"
                     Foreground="Green"
             />
-            <Button x:Name="btn2" Content="Random Eyes"
+			<Button x:Name="btn2" Content="Random Eyes"
                     Click="randomize" ClickMode="Hover"
                     Margin="125,305,0,10" Width="88"
                     HorizontalAlignment="Left"
                     Foreground="Green"
             />
-            <Button x:Name="btn3" Content="Random Nose"
+			<Button x:Name="btn3" Content="Random Nose"
                     Click="randomize" ClickMode="Hover"
                     Margin="0,305,0,10" Width="88"
                     HorizontalAlignment="Center"
                     Foreground="Green"
             />
-            <Button x:Name="btn4" Content="Random Mouth"
+			<Button x:Name="btn4" Content="Random Mouth"
                     Click="randomize" ClickMode="Hover"
                     Margin="312,305,0,10" Width="88"
                     HorizontalAlignment="Left"
                     Foreground="Green"
             />
-            <Button x:Name="btn5" Content="Random Face"
+			<Button x:Name="btn5" Content="Random Face"
                     Click="randomize" ClickMode="Hover"
                     Margin="405,305,0,10" Width="88"
                     HorizontalAlignment="Left"
                     Foreground="Green"
             />
-        </Grid>
-
-
-    </Grid>
+		</Grid>
+	</Grid>
 </Window>
+
