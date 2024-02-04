@@ -1,0 +1,27 @@
+﻿<Window x:Class="M01_First_WPF_Proj.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:M01_First_WPF_Proj"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid x:Name="myGrid">
+        <Canvas x:Name="faceCanvas" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="500" Margin="10,10,0,0">
+            <Image x:Name="faceImage" />
+            <Image x:Name="hairImage" />
+            <Image x:Name="eyesImage" />
+            <Image x:Name="noseImage" />
+            <Image x:Name="mouthImage" />
+        </Canvas>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,294,0,0">
+            <CheckBox x:Name="chkHair" Content="Ran Hair" Margin="5"/>
+            <CheckBox x:Name="chkEyes" Content="Ran Eyes" Margin="5"/>
+            <CheckBox x:Name="chkNose" Content="Ran Nose" Margin="5"/>
+            <CheckBox x:Name="chkMouth" Content="Ran Mouth" Margin="5"/>
+            <CheckBox x:Name="chkFace" Content="Ran Head" Margin="5"/>
+            <Button x:Name="btnRandomFace" Content="Random Face" Click="btnRandomFace_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
