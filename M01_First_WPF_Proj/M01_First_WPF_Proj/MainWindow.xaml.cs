@@ -17,15 +17,9 @@ namespace M01_First_WPF_Proj
             try
             {
                 LoadImages();
-                imageControls = new Dictionary<string, Image>
-                {
-                    { "hair", hairImage },
-                    { "eyes", eyesImage },
-                    { "nose", noseImage },
-                    { "mouth", mouthImage },
-                    { "face", mouthImage }
 
-                };
+
+
             }
             catch (Exception ex)
             {
@@ -33,8 +27,8 @@ namespace M01_First_WPF_Proj
             }
         }
 
-        // Random variable
-        Random random = new Random();
+// Random variable
+Random random = new Random();
 
         // Image array definition
         BitmapImage[] faceImages = new BitmapImage[4];
@@ -48,15 +42,32 @@ namespace M01_First_WPF_Proj
         // Method to load images
         private void LoadImages()
         {
-            foreach (string filePath in Directory.GetFiles(imagesDirectory, "*.png"))
+            // Get the absolute path to the images directory
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string absoluteImagesDirectory = Path.Combine(basePath, imagesDirectory);
+
+            foreach (string filePath in Directory.GetFiles(absoluteImagesDirectory, "*.png"))
             {
                 string fileName = Path.GetFileNameWithoutExtension(filePath);
-                string[] parts = fileName.Split(new char[] { '1', '2', '3', '4' }, 2); // Splitting by potential indices
-                if (parts.Length != 2)
+
+                // Find the first occurrence of any splitter character
+                int splitIndex = fileName.IndexOfAny(new char[] { '1', '2', '3', '4' });
+
+                string[] parts;
+                if (splitIndex != -1 && splitIndex < fileName.Length - 1)
                 {
-            
-                    // Handle error or continue with the next file
-                    continue;
+                    // If a splitter is found and it's not the last character, split normally
+                    parts = new[] { fileName.Substring(0, splitIndex), fileName.Substring(splitIndex + 1) };
+                }
+                else if (splitIndex != -1)
+                {
+                    // If the splitter is the last character, handle accordingly
+                    parts = new[] { fileName.Substring(0, splitIndex), fileName[splitIndex].ToString() };
+                }
+                else
+                {
+                    // If no splitter is found, perhaps handle as an error or special case
+                    continue; // or handle differently
                 }
 
                 string type = parts[0].ToLower();
@@ -68,7 +79,11 @@ namespace M01_First_WPF_Proj
 
                 index -= 1; // Subtract 1 to convert to 0-based index
 
-                BitmapImage image = new BitmapImage(new Uri(filePath, UriKind.Absolute));
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(filePath, UriKind.Absolute);
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.EndInit();
 
                 switch (type)
                 {
@@ -90,6 +105,7 @@ namespace M01_First_WPF_Proj
                 }
             }
         }
+
 
 
         private void randomize(object sender, RoutedEventArgs e)
@@ -142,9 +158,24 @@ namespace M01_First_WPF_Proj
         // Method to set image
         private void setImage(BitmapImage image, string type)
         {
-            if (imageControls.TryGetValue(type, out Image control))
+
+            switch (type)
             {
-                control.Source = image;
+                case "face":
+                    faceImage.Source = image;
+                    break;
+                case "mouth":
+                    mouthImage.Source = image;
+                    break;
+                case "nose":
+                    noseImage.Source = image;
+                    break;
+                case "eyes":
+                    eyesImage.Source = image;
+                    break;
+                case "hair":
+                    hairImage.Source = image;
+                    break;
             }
         }
     }
