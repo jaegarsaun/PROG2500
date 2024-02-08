@@ -17,9 +17,6 @@ namespace M01_First_WPF_Proj
             try
             {
                 LoadImages();
-
-
-
             }
             catch (Exception ex)
             {
@@ -108,52 +105,77 @@ Random random = new Random();
 
 
 
-        private void randomize(object sender, RoutedEventArgs e)
+        private void btnRandomFace_Click(object sender, RoutedEventArgs e)
         {
-            Button clickedButton = sender as Button;
-            if (clickedButton != null)
+            if (chkHair.IsChecked == true)
             {
-                int num;
-                BitmapImage newImage;
+                RandomizeFeature("hair");
+            }
+            if (chkEyes.IsChecked == true)
+            {
+                RandomizeFeature("eyes");
+            }
+            if (chkNose.IsChecked == true)
+            {
+                RandomizeFeature("nose");
+            }
+            if (chkFace.IsChecked == true)
+            {
+                RandomizeFeature("face");
+            }
+            if (chkMouth.IsChecked == true)
+            {
+                RandomizeFeature("mouth");
+            }
 
-                switch (clickedButton.Name)
-                {
-                    case "btn1":
-                        // Randomize Hair
-                        num = random.Next(hairImages.Length);
-                        newImage = hairImages[num];
-                        setImage(newImage, "hair");
-                        break;
-                    case "btn2":
-                        // Randomize Eyes
-                        num = random.Next(eyeImages.Length);
-                        newImage = eyeImages[num];
-                        setImage(newImage, "eyes");
-                        break;
-                    case "btn3":
-                        // Randomize Nose
-                        num = random.Next(noseImages.Length);
-                        newImage = noseImages[num];
-                        setImage(newImage, "nose");
-                        break;
-                    case "btn4":
-                        // Randomize Mouth
-                        num = random.Next(mouthImages.Length);
-                        newImage = mouthImages[num];
-                        setImage(newImage, "mouth");
-                        break;
-                    case "btn5":
-                        // Randomize Face
-                        // Randomize Mouth
-                        num = random.Next(faceImages.Length);
-                        newImage = faceImages[num];
-                        setImage(newImage, "face");
-                        break;
-                    default:
-                        break;
-                }
+            if (!(chkMouth.IsChecked == true || chkEyes.IsChecked == true || chkHair.IsChecked == true || chkFace.IsChecked == true || chkNose.IsChecked == true))
+            {
+                // randomize whole face
+                RandomizeFeature("hair");
+                RandomizeFeature("eyes");
+                RandomizeFeature("nose");
+                RandomizeFeature("face");
+                RandomizeFeature("mouth");
             }
         }
+
+        private void RandomizeFeature(string feature)
+        {
+            int num;
+            BitmapImage newImage = null;
+
+            switch (feature)
+            {
+                case "hair":
+                    num = random.Next(hairImages.Length);
+                    newImage = hairImages[num];
+                    break;
+                case "eyes":
+                    num = random.Next(eyeImages.Length);
+                    newImage = eyeImages[num];
+                    break;
+                case "nose":
+                    num = random.Next(noseImages.Length);
+                    newImage = noseImages[num];
+                    break;
+                case "mouth":
+                    num = random.Next(mouthImages.Length);
+                    newImage = mouthImages[num];
+                    break;
+                case "face":
+                    num = random.Next(faceImages.Length);
+                    newImage = faceImages[num];
+                    break;
+
+
+            }
+
+            if (newImage != null)
+            {
+                setImage(newImage, feature);
+            }
+        }
+
 
         // Method to set image
         private void setImage(BitmapImage image, string type)
@@ -180,4 +202,25 @@ Random random = new Random();
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

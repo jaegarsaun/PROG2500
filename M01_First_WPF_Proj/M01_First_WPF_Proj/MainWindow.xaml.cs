@@ -17,9 +17,6 @@ namespace M01_First_WPF_Proj
             try
             {
                 LoadImages();
-
-
-
             }
             catch (Exception ex)
             {
