@@ -61,13 +61,13 @@ Random random = new Random();
                 }
                 else if (splitIndex != -1)
                 {
-                    // If the splitter is the last character, handle accordingly
+                    // If the splitter is the last character
                     parts = new[] { fileName.Substring(0, splitIndex), fileName[splitIndex].ToString() };
                 }
                 else
                 {
                     // If no splitter is found, perhaps handle as an error or special case
-                    continue; // or handle differently
+                    continue; 
                 }
 
                 string type = parts[0].ToLower();
