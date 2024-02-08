@@ -1,0 +1,54 @@
+﻿<Window x:Class="M01_First_WPF_Proj.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:M01_First_WPF_Proj"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+	<Grid x:Name="myGrid">
+		
+		<Canvas x:Name="faceCanvas" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="500" Margin="10,10,0,0">
+			<Image x:Name="faceImage" />
+			<Image x:Name="hairImage" />
+			<Image x:Name="eyesImage" />
+			<Image x:Name="noseImage" />
+			<Image x:Name="mouthImage" />
+
+		</Canvas>
+
+		<Grid x:Name="myGrid2" Margin="0,0,0,-4">
+			<Button x:Name="btn1" Content="Random Hair"
+                    Click="randomize" 
+                    Margin="32,305,0,10" Width="88"
+                    HorizontalAlignment="Left"
+                    Foreground="Green"
+            />
+			<Button x:Name="btn2" Content="Random Eyes"
+                    Click="randomize" 
+                    Margin="125,305,0,10" Width="88"
+                    HorizontalAlignment="Left"
+                    Foreground="Green"
+            />
+			<Button x:Name="btn3" Content="Random Nose"
+                    Click="randomize" 
+                    Margin="0,305,0,10" Width="88"
+                    HorizontalAlignment="Center"
+                    Foreground="Green"
+            />
+			<Button x:Name="btn4" Content="Random Mouth"
+                    Click="randomize" 
+                    Margin="312,305,0,10" Width="88"
+                    HorizontalAlignment="Left"
+                    Foreground="Green"
+            />
+			<Button x:Name="btn5" Content="Random Face"
+                    Click="randomize" 
+                    Margin="405,305,0,10" Width="88"
+                    HorizontalAlignment="Left"
+                    Foreground="Green"
+            />
+		</Grid>
+	</Grid>
+</Window>
+
