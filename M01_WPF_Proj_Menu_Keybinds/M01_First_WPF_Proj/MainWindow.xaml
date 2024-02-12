@@ -7,25 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
 	<Grid x:Name="myGrid">
-		
-		<Canvas x:Name="faceCanvas" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="500" Margin="10,10,0,0">
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Tools">
+                    <MenuItem Header="_Random Hair" InputGestureText="Ctrl+H" Click="menuItemClick" Tag="hair"/>
+                    <MenuItem Header="_Random Eyes" InputGestureText="Ctrl+E" Click="menuItemClick" Tag="eyes"/>
+                    <MenuItem Header="_Random Head" InputGestureText="Ctrl+J" Click="menuItemClick" Tag="head"/>
+                    <MenuItem Header="_Random Nose" InputGestureText="Ctrl+N" Click="menuItemClick" Tag="nose"/>
+                    <MenuItem Header="_Random Mouth" InputGestureText="Ctrl+M" Click="menuItemClick" Tag="mouth"/>
+                    <MenuItem Header="_Random Face" InputGestureText="Ctrl+G" Click="menuItemClick" Tag="face"/>
+                    <Separator />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+            </Menu>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+
+        <Canvas x:Name="faceCanvas" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="500" Margin="10,10,0,0">
 			<Image x:Name="faceImage" />
 			<Image x:Name="hairImage" />
 			<Image x:Name="eyesImage" />
 			<Image x:Name="noseImage" />
 			<Image x:Name="mouthImage" />
 
-		</Canvas>
+        </Canvas>
 
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <CheckBox x:Name="chkHair" Content="Ran Hair" Margin="5"/>
-            <CheckBox x:Name="chkEyes" Content="Ran Eyes" Margin="5"/>
-            <CheckBox x:Name="chkNose" Content="Ran Nose" Margin="5"/>
-            <CheckBox x:Name="chkFace" Content="Ran Face" Margin="5"/>
-            <CheckBox x:Name="chkMouth" Content="Ran Mouth" Margin="5"/>
-            <Button x:Name="btnRandomFace" Content="Ran Face" Click="btnRandomFace_Click" Margin="5"/>
 
-        </StackPanel>
+        
     </Grid>
 </Window>
 

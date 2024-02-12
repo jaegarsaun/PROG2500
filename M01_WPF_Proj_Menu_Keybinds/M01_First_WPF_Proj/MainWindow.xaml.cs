@@ -9,8 +9,6 @@ namespace M01_First_WPF_Proj
 {
     public partial class MainWindow : Window
     {
-        // Dictionary to map type strings to Image controls
-        private Dictionary<string, Image> imageControls;
         public MainWindow()
         {
             InitializeComponent();
@@ -105,39 +103,27 @@ Random random = new Random();
 
 
 
-        private void btnRandomFace_Click(object sender, RoutedEventArgs e)
+        private void menuItemClick(object sender, EventArgs e)
         {
-            if (chkHair.IsChecked == true)
+            if (sender is MenuItem menuItem)
             {
-                RandomizeFeature("hair");
-            }
-            if (chkEyes.IsChecked == true)
-            {
-                RandomizeFeature("eyes");
-            }
-            if (chkNose.IsChecked == true)
-            {
-                RandomizeFeature("nose");
-            }
-            if (chkFace.IsChecked == true)
-            {
-                RandomizeFeature("face");
-            }
-            if (chkMouth.IsChecked == true)
-            {
-                RandomizeFeature("mouth");
-            }
+                var feature = menuItem.Tag?.ToString();
 
-            if (!(chkMouth.IsChecked == true || chkEyes.IsChecked == true || chkHair.IsChecked == true || chkFace.IsChecked == true || chkNose.IsChecked == true))
-            {
-                // randomize whole face
-                RandomizeFeature("hair");
-                RandomizeFeature("eyes");
-                RandomizeFeature("nose");
-                RandomizeFeature("face");
-                RandomizeFeature("mouth");
+                if(feature == "face")
+                {
+                    RandomizeFeature("hair");
+                    RandomizeFeature("eyes");
+                    RandomizeFeature("mouth");
+                    RandomizeFeature("nose");
+                    RandomizeFeature("face");
+                }
+                else
+                {
+                    RandomizeFeature(feature);
+                }
             }
         }
+
 
         private void RandomizeFeature(string feature)
         {
