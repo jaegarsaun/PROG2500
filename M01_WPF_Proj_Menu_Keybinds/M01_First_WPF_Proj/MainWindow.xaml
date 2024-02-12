@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:M01_First_WPF_Proj"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-	<Grid x:Name="myGrid">
+        Title="MainWindow" Height="500" Width="800">
+    <Window.InputBindings>
+        <KeyBinding Key="H" Modifiers="Control" Command="ApplicationCommands.NotACommand"/>
+        <KeyBinding Key="E" Modifiers="Control" Command="ApplicationCommands.NotACommand"/>
+        <KeyBinding Key="J" Modifiers="Control" Command="ApplicationCommands.NotACommand"/>
+        <KeyBinding Key="N" Modifiers="Control" Command="ApplicationCommands.NotACommand"/>
+        <KeyBinding Key="M" Modifiers="Control" Command="ApplicationCommands.NotACommand"/>
+        <KeyBinding Key="G" Modifiers="Control" Command="ApplicationCommands.NotACommand"/>
+    </Window.InputBindings>
+    <Grid x:Name="myGrid">
         <DockPanel>
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_Tools">

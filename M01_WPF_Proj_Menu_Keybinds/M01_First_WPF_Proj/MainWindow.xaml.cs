@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Collections.Generic;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace M01_First_WPF_Proj
 {
@@ -12,6 +13,7 @@ namespace M01_First_WPF_Proj
         public MainWindow()
         {
             InitializeComponent();
+            this.PreviewKeyDown += new KeyEventHandler(HandleKeyBindings);
             try
             {
                 LoadImages();
@@ -22,8 +24,41 @@ namespace M01_First_WPF_Proj
             }
         }
 
-// Random variable
-Random random = new Random();
+        private void HandleKeyBindings(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.H && Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                RandomizeFeature("hair");
+            }
+            else if(e.Key == Key.N && Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                RandomizeFeature("nose");
+            }
+            else if (e.Key == Key.M && Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                RandomizeFeature("mouth");
+            }
+            else if (e.Key == Key.E && Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                RandomizeFeature("eyes");
+            }
+            else if (e.Key == Key.J && Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                RandomizeFeature("face");
+            }
+            else if (e.Key == Key.G && Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                RandomizeFeature("nose");
+                RandomizeFeature("face");
+                RandomizeFeature("eyes");
+                RandomizeFeature("mouth");
+                RandomizeFeature("hair");
+            }
+            // Handle other key combinations
+        }
+
+        // Random variable
+        Random random = new Random();
 
         // Image array definition
         BitmapImage[] faceImages = new BitmapImage[4];
