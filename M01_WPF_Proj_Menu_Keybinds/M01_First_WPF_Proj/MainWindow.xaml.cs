@@ -54,7 +54,7 @@ namespace M01_First_WPF_Proj
                 RandomizeFeature("mouth");
                 RandomizeFeature("hair");
             }
-            // Handle other key combinations
+            
         }
 
         // Random variable
