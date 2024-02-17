@@ -41,6 +41,7 @@
         </Canvas>
 
 
+        <Button x:Name="helpButton" Height="45" Width="100" Click="helpButton_Click" Margin="50,402,650,37">Help</Button>
         
     </Grid>
 </Window>

@@ -5,6 +5,10 @@ using System.Windows.Media.Imaging;
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Forms;
+
+using InputKeyEventArgs = System.Windows.Input.KeyEventArgs;
+
 
 namespace M01_First_WPF_Proj
 {
@@ -13,18 +17,18 @@ namespace M01_First_WPF_Proj
         public MainWindow()
         {
             InitializeComponent();
-            this.PreviewKeyDown += new KeyEventHandler(HandleKeyBindings);
+            this.PreviewKeyDown += new System.Windows.Input.KeyEventHandler(HandleKeyBindings);
             try
             {
                 LoadImages();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        private void HandleKeyBindings(object sender, KeyEventArgs e)
+        private void HandleKeyBindings(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == Key.H && Keyboard.Modifiers == ModifierKeys.Control)
             {
@@ -55,6 +59,11 @@ namespace M01_First_WPF_Proj
                 RandomizeFeature("hair");
             }
             
+        }
+
+        private void helpButton_Click(object sender, RoutedEventArgs e)
+        {
+            Help.ShowHelp(null, "./faceMakerHelpDoc.chm", HelpNavigator.Topic, "Introduction/Home.chm");
         }
 
         // Random variable
@@ -140,7 +149,7 @@ namespace M01_First_WPF_Proj
 
         private void menuItemClick(object sender, EventArgs e)
         {
-            if (sender is MenuItem menuItem)
+            if (sender is System.Windows.Controls.MenuItem menuItem)
             {
                 var feature = menuItem.Tag?.ToString();
 
