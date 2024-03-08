@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\16135\\Desktop\\coding\\PROG2500\\M08_3D_Grouping\\Cube3D\\Grouping3D.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\16135\\Desktop\\coding\\PROG2500\\M08_3D_Grouping\\Cube3D\\Grouping3D.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\16135\\Desktop\\coding\\PROG2500\\M08_3D_Grouping\\Cube3D\\Grouping3D.csproj",
+        "projectName": "Cube3D",
+        "projectPath": "C:\\Users\\16135\\Desktop\\coding\\PROG2500\\M08_3D_Grouping\\Cube3D\\Grouping3D.csproj",
+        "packagesPath": "C:\\Users\\16135\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\16135\\Desktop\\coding\\PROG2500\\M08_3D_Grouping\\Cube3D\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\16135\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "HelixToolkit.Wpf": {
+              "target": "Package",
+              "version": "[2.24.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

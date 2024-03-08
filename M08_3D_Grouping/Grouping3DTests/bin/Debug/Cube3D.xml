@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cube3D</name>
+    </assembly>
+    <members>
+        <member name="F:Cube3D.Dot.x">
+            <summary>
+            Location 
+            </summary>
+        </member>
+        <member name="M:Cube3D.Dot.Distance(Cube3D.Dot)">
+            <summary>
+            Distance between this 
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Grouping3D.Rect_3D.height">
+            <summary>
+            Fields of a box (rectangular prism)
+            </summary>
+        </member>
+        <member name="M:Grouping3D.Rect_3D.#ctor(System.Double,System.Double,System.Double)">
+            <summary>
+            Constructor with default parameters.  If you are
+            missing parameters, you get the default.
+            </summary>
+            <param name="height"></param>
+            <param name="width"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Grouping3D.Rect_3D.#ctor(System.Windows.Media.Media3D.Vector3D,System.Double,System.Double,System.Double)">
+            <summary>
+            Overload constructor.
+            </summary>
+            <param name="position"></param>
+            <param name="height"></param>
+            <param name="width"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Grouping3D.Rect_3D.#ctor(System.Windows.Media.Media3D.Vector3D,System.Windows.Media.Media3D.Vector3D,System.Double,System.Double,System.Double)">
+            <summary>
+            Constructor overlaoded again.
+            </summary>
+            <param name="position"></param>
+            <param name="velocity"></param>
+            <param name="height"></param>
+            <param name="width"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Grouping3D.Rect_3D.#ctor(System.Windows.Media.Media3D.Vector3D,System.Windows.Media.Media3D.Vector3D,System.Windows.Media.Media3D.Vector3D,System.Double,System.Double,System.Double)">
+            <summary>
+            This constructor has it all!
+            </summary>
+            <param name="position"></param>
+            <param name="velocity"></param>
+            <param name="acceleration"></param>
+            <param name="height"></param>
+            <param name="width"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Grouping3D.Rect_3D.Create_Rect_3D(System.Windows.Media.Media3D.Vector3D,System.Windows.Media.Media3D.Vector3D,System.Windows.Media.Media3D.Vector3D,System.Double,System.Double,System.Double)">
+            <summary>
+            The actual method for creating the box.  All constructors
+            are meant to call here.
+            </summary>
+            <param name="position"></param>
+            <param name="velocity"></param>
+            <param name="acceleration"></param>
+            <param name="height"></param>
+            <param name="width"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Grouping3D.Rect_3D.mesh_offset_by_position">
+            <summary>
+            Set up mesh using position offset
+            </summary>
+        </member>
+        <member name="M:Grouping3D.Rect_3D.update_Position">
+            <summary>
+            This is the outside call to this object
+            (via a timer?), to increment it's position
+            and then recalculate the mesh/model in the 
+            new position offset.
+            </summary>
+        </member>
+        <member name="T:Grouping3D.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:Grouping3D.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Grouping3D.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:Grouping3D.Base_3D_Shape">
+            <summary>
+            Desctiption:  This is the base 3D class.  
+            
+            After a creating an object, say newShape3D,
+            set proprties position, velocty, and accelleration.
+            
+            Then call newShape3D.Start() to start the thread
+            and get the 3D object moving.
+            
+            Author: Russell Shanahan
+            </summary>
+        </member>
+        <member name="M:Grouping3D.Base_3D_Shape.#ctor">
+            <summary>
+            Construct the mesh and model of the base shape.
+            Even though we don't know the type of shape, 
+            we do know it needs these objects.
+            </summary>
+        </member>
+        <member name="M:Grouping3D.Base_3D_Shape.mesh_offset_by_position">
+            <summary>
+            Abstract method for changing shape's mesh/model
+            to be offset by it's position.
+            </summary>
+        </member>
+        <member name="M:Grouping3D.Base_3D_Shape.update_Position">
+            <summary>
+            This is the outside call to this object
+            (via a timer?), to increment it's position
+            and then recalculate the mesh/model in the 
+            new position offset.
+            </summary>
+        </member>
+        <member name="T:Grouping3D.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            
+            WPF The Easy 3D Way
+            http://www.i-programmer.info/projects/38-windows/273-easy-3d.html
+            
+            Updated to use more boxes, moving independantly.
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:Grouping3D.MainWindow.#ctor">
+            <summary>
+            Main window of Shape3D.  
+            
+            Renders 3 boxes, but can add more.  Plus
+            Base_3D_Shape can be extended to other shapes.
+            </summary>
+        </member>
+        <member name="M:Grouping3D.MainWindow.timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Timer updates shapes positions each iteration.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Grouping3D.MainWindow.Env3D_Setup">
+            <summary>
+            Set up light, camera, and other 3D settings
+            for the 3D viewport. Shapes are expected to
+            be in the arraylist and are already added to
+            the 3D display by being added to the modelGroup
+            object.
+            </summary>
+        </member>
+        <member name="M:Grouping3D.MainWindow.New_Box_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            When user clicks New Box button, create a 
+            random box (random position, size, ...)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Grouping3D.MainWindow.setCameraPosition(System.Double,System.Double,System.Double)">
+            <summary>
+            Move camera position, but then set look_at to point to origin
+            </summary>
+            <param name="X"></param>
+            <param name="Y"></param>
+            <param name="Z"></param>
+        </member>
+        <member name="M:Grouping3D.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Grouping3D.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Grouping3D.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Grouping3D.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
