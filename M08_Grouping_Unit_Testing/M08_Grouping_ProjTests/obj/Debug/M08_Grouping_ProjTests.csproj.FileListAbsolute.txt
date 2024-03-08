@@ -1,0 +1,17 @@
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\bin\Debug\M08_Grouping_ProjTests.dll
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\bin\Debug\M08_Grouping_ProjTests.pdb
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\bin\Debug\JetBrains.Annotations.dll
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\bin\Debug\M01_First_WPF_Proj.exe
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\bin\Debug\M01_First_WPF_Proj.pdb
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\bin\Debug\M01_First_WPF_Proj.exe.config
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\obj\Debug\M08_Grouping_ProjTests.csproj.AssemblyReference.cache
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\obj\Debug\M08_Grouping_ProjTests.csproj.CoreCompileInputs.cache
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\obj\Debug\M08_Grouping_ProjTests.csproj.CopyComplete
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\obj\Debug\M08_Grouping_ProjTests.dll
+C:\Users\16135\Desktop\coding\PROG2500\M08_Grouping_Unit_Testing\M08_Grouping_ProjTests\obj\Debug\M08_Grouping_ProjTests.pdb
