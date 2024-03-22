@@ -1,0 +1,55 @@
+﻿<Window x:Class="DBCRUD.AddUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add New User" Height="350" Width="400">
+    <Grid Margin="10">
+        <TabControl>
+            <TabItem Header="General">
+                <StackPanel>
+                    <TextBox x:Name="txtFname" Foreground="Gray" Text="First Name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Tag="First Name"/>
+                    <TextBox x:Name="txtLname" Foreground="Gray" Text="Last Name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Tag="Last Name"/>
+                </StackPanel>
+                
+            </TabItem>
+            <TabItem Header="Drop Downs">
+                <StackPanel>
+                    <TextBox x:Name="txtHobby" Foreground="Gray" Text="Hobby" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Tag="Hobby"/>
+                    <TextBox x:Name="txtOccupation" Foreground="Gray" Text="Occupation" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Tag="Occupation"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Images">
+                <StackPanel>
+                    <TextBox x:Name="txtHairImage" Foreground="Gray" Text="Hair Image" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Tag="hair"/>
+                    <TextBox x:Name="txtEyeImage" Foreground="Gray" Text="Eye Image" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Tag="eye"/>
+                    <TextBox x:Name="txtNoseImage" Foreground="Gray" Text="Nose Image" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Tag="nose"/>
+                    <TextBox x:Name="txtMouthImage" Foreground="Gray" Text="Mouth Image" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Tag="mouth"/>
+                    <TextBox x:Name="txtHeadImage" Foreground="Gray" Text="Head Image" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Tag="head"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Face">
+                <Grid x:Name="myGrid">
+		
+                    <Canvas Grid.Row="6" Grid.Column="2" x:Name="faceCanvas" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="500" Margin="10,10,0,0">
+                        <Image x:Name="faceImage" />
+                        <Image x:Name="hairImage" />
+                        <Image x:Name="eyesImage" />
+                        <Image x:Name="noseImage" />
+                        <Image x:Name="mouthImage" />
+
+                    </Canvas>
+
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                        <CheckBox x:Name="chkHair" Content="Ran Hair" Margin="5"/>
+                        <CheckBox x:Name="chkEyes" Content="Ran Eyes" Margin="5"/>
+                        <CheckBox x:Name="chkNose" Content="Ran Nose" Margin="5"/>
+                        <CheckBox x:Name="chkFace" Content="Ran Face" Margin="5"/>
+                        <CheckBox x:Name="chkMouth" Content="Ran Mouth" Margin="5"/>
+                        <Button x:Name="btnRandomFace" Content="Ran Face" Click="btnRandomFace_Click" Margin="5"/>
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="btnSubmit" Content="Submit" VerticalAlignment="Bottom" Margin="0,10,0,0" Click="SubmitButton_Click"/>
+    </Grid>
+</Window>
