@@ -66,7 +66,7 @@ public partial class AddUserWindow : Window
     
     private void LoadHobbiesFromDatabase()
     {
-        string query = "SELECT * FROM hobbies"; // Assuming your table has a structure like: id, hobby_name
+        string query = "SELECT * FROM hobbies"; 
         try
         {
             db.ExecuteQuery(query, new Dictionary<string, object>(), reader =>
@@ -75,7 +75,7 @@ public partial class AddUserWindow : Window
                 {
                     while (reader.Read())
                     {
-                        string hobby = reader["type"].ToString(); // Replace "hobby_name" with your actual column name for the hobby
+                        string hobby = reader["type"].ToString(); 
                         cbHobby.Items.Add(hobby);
                     }
                 });
@@ -97,7 +97,7 @@ public partial class AddUserWindow : Window
                 {
                     while (reader.Read())
                     {
-                        string job = reader["type"].ToString(); // Replace "hobby_name" with your actual column name for the hobby
+                        string job = reader["type"].ToString(); 
                         cbJob.Items.Add(job);
                     }
                 });
