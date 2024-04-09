@@ -83,13 +83,13 @@ namespace M08_Grouping_ProjTests
 
             // Act
             var result = grouping.GetGroup(workingList, thresholdDistance);
-
             // Assert
             // Check if both points are considered within the same group
             // This assertion is based on the assumption that points at the threshold are included
             Assert.AreEqual(2, result.Count); // Expecting both points to be in the same group
             Assert.IsTrue(result.Contains(new Point(0, 0)) && result.Contains(new Point(100, 0)));
         }
+        
         
         [TestMethod]
         public void ApplyThresholdsMakeGroups_WithEmptyList_ReturnsEmptyGroupList()

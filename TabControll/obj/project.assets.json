@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\16135\\RiderProjects\\TabControll\\TabControll\\TabControll.csproj",
+      "projectUniqueName": "C:\\Users\\16135\\Desktop\\coding\\PROG2500\\TabControll\\TabControll.csproj",
       "projectName": "TabControll",
-      "projectPath": "C:\\Users\\16135\\RiderProjects\\TabControll\\TabControll\\TabControll.csproj",
+      "projectPath": "C:\\Users\\16135\\Desktop\\coding\\PROG2500\\TabControll\\TabControll.csproj",
       "packagesPath": "C:\\Users\\16135\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\16135\\RiderProjects\\TabControll\\TabControll\\obj\\",
+      "outputPath": "C:\\Users\\16135\\Desktop\\coding\\PROG2500\\TabControll\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
