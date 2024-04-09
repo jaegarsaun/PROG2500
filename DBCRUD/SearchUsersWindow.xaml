@@ -1,15 +1,15 @@
 <Window x:Class="DBCRUD.SearchUsersWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DBCRUD"
         mc:Ignorable="d"
         Title="Search Users" Height="450" Width="800">
     <Grid>
         <TextBox x:Name="LastNameSearchBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Width="300" />
         <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="320,0,0,0" Width="100" Click="SearchButton_Click" />
-        <ItemsControl ItemsSource="{Binding Users}" 
+        <ItemsControl ItemsSource="{Binding SearchResults}" 
                           x:Name="itemsControl">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>

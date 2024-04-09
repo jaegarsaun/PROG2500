@@ -13,8 +13,8 @@
             </TabItem>
             <TabItem Header="Drop Downs">
                 <StackPanel>
-                    <TextBox x:Name="txtHobby" Foreground="Gray" Text="Hobby" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Tag="Hobby"/>
-                    <TextBox x:Name="txtOccupation" Foreground="Gray" Text="Occupation" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Tag="Occupation"/>
+                    <ComboBox x:Name="cbHobby" Height="20" Margin="2"/>
+                    <ComboBox x:Name="cbJob" Height="20" Margin="2"/>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Images">

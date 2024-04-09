@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:DBCRUD"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <local:ImagePathConverter x:Key="ImagePathConverter" />
     </Application.Resources>
 </Application>

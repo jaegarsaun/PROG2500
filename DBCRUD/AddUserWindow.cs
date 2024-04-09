@@ -55,10 +55,57 @@ public partial class AddUserWindow : Window
         try
         {
             LoadImages();
+            LoadHobbiesFromDatabase();
+            LoadJobsFromDatabase();
         }
         catch (Exception ex)
         {
             MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+    
+    private void LoadHobbiesFromDatabase()
+    {
+        string query = "SELECT * FROM hobbies"; // Assuming your table has a structure like: id, hobby_name
+        try
+        {
+            db.ExecuteQuery(query, new Dictionary<string, object>(), reader =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    while (reader.Read())
+                    {
+                        string hobby = reader["type"].ToString(); // Replace "hobby_name" with your actual column name for the hobby
+                        cbHobby.Items.Add(hobby);
+                    }
+                });
+            });
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Failed to load hobbies from database: " + ex.Message, "Database Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+    private void LoadJobsFromDatabase()
+    {
+        string query = "SELECT * FROM occupations"; 
+        try
+        {
+            db.ExecuteQuery(query, new Dictionary<string, object>(), reader =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    while (reader.Read())
+                    {
+                        string job = reader["type"].ToString(); // Replace "hobby_name" with your actual column name for the hobby
+                        cbJob.Items.Add(job);
+                    }
+                });
+            });
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Failed to load hobbies from database: " + ex.Message, "Database Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
     
@@ -101,11 +148,11 @@ private void SubmitButton_Click(object sender, RoutedEventArgs e)
     string lname = !string.IsNullOrWhiteSpace(txtLname.Text) && txtLname.Text != "Last Name" ? txtLname.Text : null;
     if (lname == null) missingFields.Add("Last Name");
     
-    string hobby = !string.IsNullOrWhiteSpace(txtHobby.Text) && txtHobby.Text != "Hobby" ? txtHobby.Text : null;
-    if (hobby == null) missingFields.Add("Hobby");
+    string hobby = cbHobby.SelectedItem?.ToString();
+    if (string.IsNullOrWhiteSpace(hobby)) missingFields.Add("Hobby");
     
-    string occupation = !string.IsNullOrWhiteSpace(txtOccupation.Text) && txtOccupation.Text != "Occupation" ? txtOccupation.Text : null;
-    if (occupation == null) missingFields.Add("Occupation");
+    string occupation = cbJob.SelectedItem?.ToString();
+    if (string.IsNullOrWhiteSpace(occupation)) missingFields.Add("Occupation");
 
     if (string.IsNullOrWhiteSpace(HairImageDB)) missingFields.Add("Hair Image");
 
@@ -314,26 +361,31 @@ private void SubmitButton_Click(object sender, RoutedEventArgs e)
                 case "hair":
                     num = random.Next(hairImages.Length);
                     newImage = hairImages[num];
+                    num += 1;
                     HairImageDB = $"hair{num}";
                     break;
                 case "eyes":
                     num = random.Next(eyeImages.Length);
                     newImage = eyeImages[num];
+                    num += 1;
                     EyeImageDB = $"eyes{num}";
                     break;
                 case "nose":
                     num = random.Next(noseImages.Length);
                     newImage = noseImages[num];
+                    num += 1;
                     NoseImageDB = $"nose{num}";
                     break;
                 case "mouth":
                     num = random.Next(mouthImages.Length);
                     newImage = mouthImages[num];
+                    num += 1;
                     MouthImageDB = $"mouth{num}";
                     break;
                 case "face":
                     num = random.Next(faceImages.Length);
                     newImage = faceImages[num];
+                    num += 1;
                     HeadImageDB = $"face{num}";
                     break;
 

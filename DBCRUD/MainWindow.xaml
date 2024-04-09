@@ -36,14 +36,18 @@
                             </Grid.RowDefinitions>
                             <StackPanel Grid.Row="0">
                                 <TextBlock Text="{Binding fname}" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding lname}" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding hobby}" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding occupation}" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding userid}" FontSize="16" FontWeight="Bold"/>
                             </StackPanel>
                             <Canvas Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Margin="10,10,0,0">
-                                <Image Source="{Binding headimage, Converter={StaticResource ImagePathConverter}}" />
+                                <Image Source="{Binding headimage, Converter={StaticResource ImagePathConverter}}" /> 
                                 <Image Source="{Binding hairimage, Converter={StaticResource ImagePathConverter}}" />
                                 <Image Source="{Binding eyeimage, Converter={StaticResource ImagePathConverter}}" />
                                 <Image Source="{Binding noseimage, Converter={StaticResource ImagePathConverter}}" />
                                 <Image Source="{Binding mouthimage, Converter={StaticResource ImagePathConverter}}" />
-                            </Canvas>
+                            </Canvas> 
                             <Button Content="Delete this user" 
                                     Grid.Row="2" 
                                     HorizontalAlignment="Right" 

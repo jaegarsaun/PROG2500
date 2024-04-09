@@ -85,7 +85,6 @@ public partial class MainWindow : Window
         if (currentIndex >= 0 && currentIndex < Users.Count)
         {
             var user = Users[currentIndex];
-            Console.Write(user.noseimage);
             
 
             // Calculate the new horizontal offset for the ScrollViewer.

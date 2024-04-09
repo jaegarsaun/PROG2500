@@ -16,7 +16,7 @@ namespace DBCRUD
                 string imagesDirectory = "./images"; 
                 string basePath = AppDomain.CurrentDomain.BaseDirectory;
                 string fullPath = Path.Combine(basePath, imagesDirectory, imagePath + ".png");
-
+                    
                 if (File.Exists(fullPath))
                 {
                     return new BitmapImage(new Uri(fullPath, UriKind.Absolute));
